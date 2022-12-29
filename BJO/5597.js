@@ -4,7 +4,8 @@
 const input = require('fs').readFileSync('./input.txt').toString().split('\n').map(Number)
 
 let answer = 0;
-let arr = Array(30).fill().map((v,i)=> i+1);
+const arr = Array(30).fill().map((v,i)=> i+1);
 input.sort((a, b) => a-b);
-answer = arr.filter(x => !input.includes(x)).toString();
-console.log(answer);
+
+answer = arr.filter(x => !input.includes(x));
+answer.forEach(item => {console.log(item);});
