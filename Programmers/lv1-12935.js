@@ -1,0 +1,17 @@
+// 제일 작은 수 제거하기 (https://school.programmers.co.kr/learn/courses/30/lessons/12935)
+// 정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.
+
+function solution(arr) {
+  arr.splice(arr.indexOf(Math.min(...arr)), 1);
+  arr.length <= 1 ? (answer = [-1]) : (answer = arr);
+  return answer;
+}
+console.log(solution([1, 3, 2, 4]));
+
+/*
+[손코딩]
+1. arr에서 가장 작은수를 찾는 메소드 활용 : Math.min()
+2. 가장 작은수의 인덱스 찾기
+3. 그 인덱스를 기준으로 요소1개만 splice 하기
+4. arr의 길이가 1보다 작거나 같으면 return [-1]
+*/
